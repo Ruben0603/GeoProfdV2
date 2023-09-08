@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OTxNE9oqQHCEeRd5l1ZaaSZGlVtuvF4GQRZj12ZeLls7HSKqdFKnRv9XdWmAGZfQc8rsQFtfHXD6oL+1XI7anA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\thijs\\OneDrive\\Documenten\\Roc\\C#\\GeoProfs\\GeoProfs.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\thijs\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.2\\microsoft.visualstudio.azure.containers.tools.targets.1.17.2.nupkg.sha512"
+  ],
+  "logs": []
+}
