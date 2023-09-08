@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/thijs/OneDrive/Documenten/Roc/C\#/GeoProfs/classes/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Y2xhc3Nlc1xpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/thijs/OneDrive/Documenten/Roc/C\#/GeoProfs/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
