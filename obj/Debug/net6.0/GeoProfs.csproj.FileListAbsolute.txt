@@ -6,7 +6,6 @@ C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\bin\Debug\net6.0\GeoProfs.dep
 C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\bin\Debug\net6.0\GeoProfs.runtimeconfig.json
 C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\bin\Debug\net6.0\GeoProfs.dll
 C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\bin\Debug\net6.0\GeoProfs.pdb
-C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.csproj.AssemblyReference.cache
 C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.AssemblyInfoInputs.cache
 C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.AssemblyInfo.cs
@@ -29,3 +28,5 @@ C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\obj\Debug\net6.0\refint\GeoPr
 C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.pdb
 C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.genruntimeconfig.cache
 C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\obj\Debug\net6.0\ref\GeoProfs.dll
+C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\bin\Debug\net6.0\package-lock.json
+C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\bin\Debug\net6.0\package.json
