@@ -15,6 +15,11 @@
 
   <ItemGroup>
     <Folder Include="classes\" />
+    <Folder Include="NewFolder1\" />
+    <Folder Include="NewFolder2\" />
+    <Folder Include="NewFolder\" />
+    <Folder Include="Pages\NewFolder\" />
+    <Folder Include="wwwroot\NewFolder\" />
   </ItemGroup>
 
 </Project>
