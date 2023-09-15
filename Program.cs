@@ -29,6 +29,7 @@ namespace GeoProfs
             app.MapRazorPages();
 
             app.Run();
+            
         }
     }
 }

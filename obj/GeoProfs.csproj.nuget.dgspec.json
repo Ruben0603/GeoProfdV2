@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thijs\\OneDrive\\Documenten\\Roc\\C#\\GeoProfs\\GeoProfs.csproj": {}
+    "C:\\Users\\moore\\OneDrive\\Documenten\\GeoProfs\\GeoProfs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thijs\\OneDrive\\Documenten\\Roc\\C#\\GeoProfs\\GeoProfs.csproj": {
+    "C:\\Users\\moore\\OneDrive\\Documenten\\GeoProfs\\GeoProfs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thijs\\OneDrive\\Documenten\\Roc\\C#\\GeoProfs\\GeoProfs.csproj",
+        "projectUniqueName": "C:\\Users\\moore\\OneDrive\\Documenten\\GeoProfs\\GeoProfs.csproj",
         "projectName": "GeoProfs",
-        "projectPath": "C:\\Users\\thijs\\OneDrive\\Documenten\\Roc\\C#\\GeoProfs\\GeoProfs.csproj",
-        "packagesPath": "C:\\Users\\thijs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thijs\\OneDrive\\Documenten\\Roc\\C#\\GeoProfs\\obj\\",
+        "projectPath": "C:\\Users\\moore\\OneDrive\\Documenten\\GeoProfs\\GeoProfs.csproj",
+        "packagesPath": "C:\\Users\\moore\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\moore\\OneDrive\\Documenten\\GeoProfs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\thijs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\moore\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
