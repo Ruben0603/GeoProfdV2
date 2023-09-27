@@ -1,7 +1,7 @@
 {
   "ContentRoots": [
-    "/src/wwwroot/",
-    "/src/obj/Debug/net6.0/scopedcss/bundle/"
+    "/src/wwwroot",
+    "/src/obj/Debug/net6.0/scopedcss/bundle"
   ],
   "Root": {
     "Children": {
@@ -12,6 +12,14 @@
             "Asset": {
               "ContentRootIndex": 0,
               "SubPath": "css/site.css"
+            },
+            "Patterns": null
+          },
+          "style.css": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "css/style.css"
             },
             "Patterns": null
           }
