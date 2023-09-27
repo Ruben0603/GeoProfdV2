@@ -1,0 +1,89 @@
+﻿@page
+@model IndexModel
+
+<h1>Welkom</h1>
+
+<div id="userInfo" style="display: none;">
+    Welkom, <span id="userEmail"></span>!
+    <button id="logoutButton">Uitloggen</button>
+</div>
+
+<h2>Inloggen</h2>
+<form id="loginForm">
+    <label for="loginEmail">E-mail:</label>
+    <input type="email" id="loginEmail" name="loginEmail" required><br>
+
+    <label for="loginPassword">Wachtwoord:</label>
+    <input type="password" id="loginPassword" name="loginPassword" required><br>
+
+    <button type="submit">Inloggen</button>
+</form>
+
+
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyCCzNwDI9iTiTEc0QTN0XU39RxqWR9XYm4",
+        authDomain: "geoprofs-1b3fb.firebaseapp.com",
+        projectId: "geoprofs-1b3fb",
+        storageBucket: "geoprofs-1b3fb.appspot.com",
+        messagingSenderId: "141244233397",
+        appId: "1:141244233397:web:9e2ce2844d4ca7160e70fc"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    // Check if a user is already logged in
+    firebase.auth().onAuthStateChanged((user) => {
+        const userInfoDiv = document.getElementById('userInfo');
+        const userEmail = document.getElementById('userEmail');
+        const logoutButton = document.getElementById('logoutButton');
+
+        if (user) {
+            // User is signed in
+            userEmail.textContent = user.email;
+            userInfoDiv.style.display = 'block';
+
+            logoutButton.addEventListener('click', () => {
+                firebase.auth().signOut()
+                    .then(() => {
+                        userInfoDiv.style.display = 'none';
+                        alert('U bent uitgelogd.');
+                    })
+                    .catch((error) => {
+                        console.error('Fout bij uitloggen:', error);
+                    });
+            });
+        } else {
+            // No user is signed in
+            userInfoDiv.style.display = 'none';
+        }
+    });
+
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const email = loginForm.loginEmail.value;
+        const password = loginForm.loginPassword.value;
+
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // User signed in successfully
+                // The onAuthStateChanged listener will handle displaying the user info
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert('Fout bij inloggen: ' + errorMessage);
+            });
+    });
+
+    
+
+  
+
+ 
+</script>

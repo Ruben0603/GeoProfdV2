@@ -9,41 +9,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GeoProfs
 build_property.RootNamespace = GeoProfs
-build_property.ProjectDir = C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs\
+build_property.ProjectDir = C:\Users\joran\OneDrive\Documenten\GitHub\Geoprofs\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\thijs\OneDrive\Documenten\Roc\C#\GeoProfs
+build_property.MSBuildProjectDirectory = C:\Users\joran\OneDrive\Documenten\GitHub\Geoprofs
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/thijs/OneDrive/Documenten/Roc/C\#/GeoProfs/Pages/Error.cshtml]
+[C:/Users/joran/OneDrive/Documenten/GitHub/Geoprofs/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thijs/OneDrive/Documenten/Roc/C\#/GeoProfs/Pages/Index.cshtml]
+[C:/Users/joran/OneDrive/Documenten/GitHub/Geoprofs/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thijs/OneDrive/Documenten/Roc/C\#/GeoProfs/Pages/Privacy.cshtml]
+[C:/Users/joran/OneDrive/Documenten/GitHub/Geoprofs/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joran/OneDrive/Documenten/GitHub/Geoprofs/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thijs/OneDrive/Documenten/Roc/C\#/GeoProfs/Pages/Rooster.cshtml]
+[C:/Users/joran/OneDrive/Documenten/GitHub/Geoprofs/Pages/Rooster.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9vc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thijs/OneDrive/Documenten/Roc/C\#/GeoProfs/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/joran/OneDrive/Documenten/GitHub/Geoprofs/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thijs/OneDrive/Documenten/Roc/C\#/GeoProfs/Pages/_ViewImports.cshtml]
+[C:/Users/joran/OneDrive/Documenten/GitHub/Geoprofs/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thijs/OneDrive/Documenten/Roc/C\#/GeoProfs/Pages/_ViewStart.cshtml]
+[C:/Users/joran/OneDrive/Documenten/GitHub/Geoprofs/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/thijs/OneDrive/Documenten/Roc/C\#/GeoProfs/Pages/Shared/_Layout.cshtml]
+[C:/Users/joran/OneDrive/Documenten/GitHub/Geoprofs/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-foyq8nvtvq
