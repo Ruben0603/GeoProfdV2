@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1pt1C+xhsXbmY61EyWQo4K4I7xTFQM8KcvF5EC3b3+c=",
+  "Hash": "eonyYgrwABOo0Fm2o0wvTMxNIznUP2WqbDgq2pVVEw4=",
   "Source": "GeoProfs",
   "BasePath": "_content/GeoProfs",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\thijs\\OneDrive\\Documenten\\Roc\\C#\\GeoProfs\\wwwroot\\css\\style.css",
+      "SourceId": "GeoProfs",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thijs\\OneDrive\\Documenten\\Roc\\C#\\GeoProfs\\wwwroot\\",
+      "BasePath": "_content/GeoProfs",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "C:\\Users\\thijs\\OneDrive\\Documenten\\Roc\\C#\\GeoProfs\\wwwroot\\favicon.ico",
