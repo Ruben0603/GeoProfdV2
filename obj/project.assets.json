@@ -105,11 +105,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joran\\OneDrive\\Documenten\\GitHub\\Geoprofs\\GeoProfs.csproj",
+      "projectUniqueName": "C:\\Users\\joran\\OneDrive\\Documenten\\ROC Nijmegen\\Vakken\\C#\\GeoProfs\\GeoProfs.csproj",
       "projectName": "GeoProfs",
-      "projectPath": "C:\\Users\\joran\\OneDrive\\Documenten\\GitHub\\Geoprofs\\GeoProfs.csproj",
+      "projectPath": "C:\\Users\\joran\\OneDrive\\Documenten\\ROC Nijmegen\\Vakken\\C#\\GeoProfs\\GeoProfs.csproj",
       "packagesPath": "C:\\Users\\joran\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joran\\OneDrive\\Documenten\\GitHub\\Geoprofs\\obj\\",
+      "outputPath": "C:\\Users\\joran\\OneDrive\\Documenten\\ROC Nijmegen\\Vakken\\C#\\GeoProfs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joran\\AppData\\Roaming\\NuGet\\NuGet.Config",

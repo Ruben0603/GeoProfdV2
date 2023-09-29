@@ -62,3 +62,35 @@ C:\Users\joran\OneDrive\Documenten\GitHub\Geoprofs\obj\Debug\net6.0\refint\GeoPr
 C:\Users\joran\OneDrive\Documenten\GitHub\Geoprofs\obj\Debug\net6.0\GeoProfs.pdb
 C:\Users\joran\OneDrive\Documenten\GitHub\Geoprofs\obj\Debug\net6.0\GeoProfs.genruntimeconfig.cache
 C:\Users\joran\OneDrive\Documenten\GitHub\Geoprofs\obj\Debug\net6.0\ref\GeoProfs.dll
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\bin\Debug\net6.0\appsettings.json
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\bin\Debug\net6.0\package-lock.json
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\bin\Debug\net6.0\package.json
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\bin\Debug\net6.0\GeoProfs.staticwebassets.runtime.json
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\bin\Debug\net6.0\GeoProfs.exe
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\bin\Debug\net6.0\GeoProfs.deps.json
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\bin\Debug\net6.0\GeoProfs.runtimeconfig.json
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\bin\Debug\net6.0\GeoProfs.dll
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\bin\Debug\net6.0\GeoProfs.pdb
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.AssemblyInfoInputs.cache
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.AssemblyInfo.cs
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.csproj.CoreCompileInputs.cache
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.RazorAssemblyInfo.cache
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.RazorAssemblyInfo.cs
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\staticwebassets\msbuild.GeoProfs.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\staticwebassets\msbuild.build.GeoProfs.props
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.GeoProfs.props
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.GeoProfs.props
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\scopedcss\bundle\GeoProfs.styles.css
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\scopedcss\projectbundle\GeoProfs.bundle.scp.css
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.dll
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\refint\GeoProfs.dll
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.pdb
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\GeoProfs.genruntimeconfig.cache
+C:\Users\joran\OneDrive\Documenten\ROC Nijmegen\Vakken\C#\GeoProfs\obj\Debug\net6.0\ref\GeoProfs.dll

@@ -1,89 +1,194 @@
 ﻿@page
 @model IndexModel
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welkom</title>
+</head>
+<body>
 
-<h1>Welkom</h1>
+    <h1>Welkom</h1>
 
-<div id="userInfo" style="display: none;">
-    Welkom, <span id="userEmail"></span>!
-    <button id="logoutButton">Uitloggen</button>
-</div>
+    <div id="userInfo" style="display: none;">
+        Welkom, <span id="userEmail"></span>! Je rol is: <span id="userRole"></span>
+        <br>
+        <button id="logoutButton">Uitloggen</button>
+    </div>
 
-<h2>Inloggen</h2>
-<form id="loginForm">
-    <label for="loginEmail">E-mail:</label>
-    <input type="email" id="loginEmail" name="loginEmail" required><br>
+    <h2>Inloggen</h2>
+    <form id="loginForm">
+        <label for="loginEmail">E-mail:</label>
+        <input type="email" id="loginEmail" name="loginEmail" required><br>
 
-    <label for="loginPassword">Wachtwoord:</label>
-    <input type="password" id="loginPassword" name="loginPassword" required><br>
+        <label for="loginPassword">Wachtwoord:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required><br>
 
-    <button type="submit">Inloggen</button>
-</form>
+        <button type="submit">Inloggen</button>
+    </form>
 
+    <table id="userTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Gebruiker ID</th>
+                <th>E-mail</th>
+                <th>Rol</th>
+                <th>Acties</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody"></tbody>
+    </table>
 
-<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
 
-<script>
-    const firebaseConfig = {
-        apiKey: "AIzaSyCCzNwDI9iTiTEc0QTN0XU39RxqWR9XYm4",
-        authDomain: "geoprofs-1b3fb.firebaseapp.com",
-        projectId: "geoprofs-1b3fb",
-        storageBucket: "geoprofs-1b3fb.appspot.com",
-        messagingSenderId: "141244233397",
-        appId: "1:141244233397:web:9e2ce2844d4ca7160e70fc"
-    };
+    <script>
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCCzNwDI9iTiTEc0QTN0XU39RxqWR9XYm4",
+            authDomain: "geoprofs-1b3fb.firebaseapp.com",
+            projectId: "geoprofs-1b3fb",
+            storageBucket: "geoprofs-1b3fb.appspot.com",
+            messagingSenderId: "141244233397",
+            appId: "1:141244233397:web:9e2ce2844d4ca7160e70fc",
+            measurementId: "G-SZ15Q61C7Q"
+        };
 
-    firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);
 
-    // Check if a user is already logged in
-    firebase.auth().onAuthStateChanged((user) => {
+        const firestore = firebase.firestore();
+        let user;
+
         const userInfoDiv = document.getElementById('userInfo');
         const userEmail = document.getElementById('userEmail');
+        const userRole = document.getElementById('userRole');
         const logoutButton = document.getElementById('logoutButton');
+        const loginForm = document.getElementById('loginForm');
+        const userTable = document.getElementById('userTable');
 
-        if (user) {
-            // User is signed in
-            userEmail.textContent = user.email;
-            userInfoDiv.style.display = 'block';
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-            logoutButton.addEventListener('click', () => {
-                firebase.auth().signOut()
-                    .then(() => {
-                        userInfoDiv.style.display = 'none';
-                        alert('U bent uitgelogd.');
-                    })
-                    .catch((error) => {
-                        console.error('Fout bij uitloggen:', error);
-                    });
-            });
-        } else {
-            // No user is signed in
-            userInfoDiv.style.display = 'none';
+            const email = loginForm.loginEmail.value;
+            const password = loginForm.loginPassword.value;
+
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    user = userCredential.user;
+                    checkUserRole();
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert('Fout bij inloggen: ' + errorMessage);
+                });
+        });
+
+        function checkUserRole() {
+            firestore.collection('users').doc(user.uid).get()
+                .then((doc) => {
+                    if (doc.exists) {
+                        const userData = doc.data();
+                        userRole.textContent = userData.role || 'Onbekend';
+
+                        if (userData.role === 'admin') {
+                            // Display the user management section for admin
+                            userTable.style.display = 'block';
+                            displayUserTable();
+                        }
+                    } else {
+                        console.error('Gebruiker niet gevonden.');
+                        userRole.textContent = 'Onbekend';
+                    }
+                    userInfoDiv.style.display = 'block';
+                })
+                .catch((error) => {
+                    console.error('Fout bij ophalen gebruikersgegevens:', error);
+                });
         }
-    });
 
-    const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+        function displayUserTable() {
+            const userTableBody = document.getElementById('userTableBody');
 
-        const email = loginForm.loginEmail.value;
-        const password = loginForm.loginPassword.value;
+            // Clear the table body
+            userTableBody.innerHTML = '';
 
-        firebase.auth().signInWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                // User signed in successfully
-                // The onAuthStateChanged listener will handle displaying the user info
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert('Fout bij inloggen: ' + errorMessage);
-            });
-    });
+            // Fetch all users from Firestore
+            firestore.collection('users').get()
+                .then((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        const userData = doc.data();
+                        const userId = doc.id;
 
-    
+                        const row = userTableBody.insertRow();
+                        const cell1 = row.insertCell(0);
+                        const cell2 = row.insertCell(1);
+                        const cell3 = row.insertCell(2);
+                        const cell4 = row.insertCell(3);
 
-  
+                        cell1.textContent = userId;
+                        cell2.textContent = userData.email;
+                        cell3.textContent = userData.role || 'Onbekend';
+                        if (userId !== user.uid) {
+                            // Allow editing for all users except the current logged-in user
+                            const editButton = document.createElement('button');
+                            editButton.textContent = 'Bewerk ID';
+                            editButton.addEventListener('click', () => {
+                                const newUserId = prompt('Voer het nieuwe ID in:');
+                                if (newUserId !== null) {
+                                    updateUserId(userId, newUserId);
+                                }
+                            });
+                            cell4.appendChild(editButton);
+                        }
+                    });
+                })
+                .catch((error) => {
+                    console.error('Fout bij ophalen gebruikersgegevens:', error);
+                });
+        }
 
- 
-</script>
+        function updateUserId(userId, newUserId) {
+            firestore.collection('users').doc(userId).delete()
+                .then(() => {
+                    firestore.collection('users').doc(newUserId).set({
+                        email: userId,
+                        role: 'medewerker'
+                    })
+                        .then(() => {
+                            console.log('Gebruiker-ID bijgewerkt naar: ' + newUserId);
+                            displayUserTable();
+                        })
+                        .catch((error) => {
+                            console.error('Fout bij bijwerken gebruiker-ID:', error);
+                        });
+                })
+                .catch((error) => {
+                    console.error('Fout bij verwijderen gebruiker:', error);
+                });
+        }
+
+        logoutButton.addEventListener('click', () => {
+            firebase.auth().signOut()
+                .then(() => {
+                    userInfoDiv.style.display = 'none';
+                    userTable.style.display = 'none';
+                    alert('U bent uitgelogd.');
+                })
+                .catch((error) => {
+                    console.error('Fout bij uitloggen:', error);
+                });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
