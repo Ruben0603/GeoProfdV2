@@ -2,6 +2,11 @@
 @model GeoProfs.Pages.RoosterModel
 @{
 }
+
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />  
+</head>
+
 <h2>Verlof aanvragen</h2>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
     Verlof aanvragen
@@ -47,3 +52,75 @@
         </div>
     </div>
 </div>
+
+@*verlof uren beschikbaar*@
+<div class="uren">
+    <h3>
+        Uren beschikbaar: 8
+    </h3>
+    <div id="piechart">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Task', 'Hours per Day'],
+                    ['beschikbaar', 8],
+                    ['gebruikt', 2],
+                ]);
+
+                var options = { 'width': 550, 'height': 400 };
+
+                // Display the chart inside the <div> element with id="piechart"
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+            }
+        </script>
+    </div>
+</div>
+
+@* Afwezigheid tabel *@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Naam werknemer</th>
+                <th scope="col">Begin datum</th>
+                <th scope="col">Eind datum</th>
+                <th scope="col">Reden</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-success">
+                <th scope="row">frank</th>
+                <td>01-01-2021</td>
+                <td>01-01-2021</td>
+                <td>Vakantie</td>
+                <td>Goedgekeurd</td>
+            </tr>
+            <tr class="table-warning">
+                <th scope="row">freek</th>
+                <td>01-01-2021</td>
+                <td>01-01-2021</td>
+                <td>Vakantie</td>
+                <td>in afwachting</td>
+            </tr>
+            <tr class="table-danger">
+                <th scope="row">ferdinand</th>
+                <td>01-01-2021</td>
+                <td>01-01-2021</td>
+                <td>medisch</td>
+                <td>Afgewezen</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
