@@ -5,8 +5,9 @@ namespace GeoProfs.Pages
 {
     public class RoosterModel : PageModel
     {
-        public void OnGet()
+        public void VerlofReset()
         {
+            
         }
     }
 }
