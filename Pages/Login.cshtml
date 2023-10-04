@@ -45,7 +45,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
 
     <script>
-        // Firebase-configuratie
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
             apiKey: "AIzaSyCCzNwDI9iTiTEc0QTN0XU39RxqWR9XYm4",
             authDomain: "geoprofs-1b3fb.firebaseapp.com",
@@ -67,6 +67,17 @@
         const logoutButton = document.getElementById('logoutButton');
         const loginForm = document.getElementById('loginForm');
         const userTable = document.getElementById('userTable');
+
+        const roleOptions = ['Admin', 'Manager', 'Medewerker'];
+
+        // Controleer de authenticatiestatus bij het initialiseren van de pagina
+        firebase.auth().onAuthStateChanged((loggedInUser) => {
+            if (loggedInUser) {
+                // Gebruiker is ingelogd
+                user = loggedInUser;
+                checkUserRole();
+            }
+        });
 
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -131,15 +142,19 @@
                         cell3.textContent = userData.role || 'Onbekend';
 
                         // Allow editing for all users
-                        const editButton = document.createElement('button');
-                        editButton.textContent = 'Bewerk ID';
-                        editButton.addEventListener('click', () => {
-                            const newRole = prompt('Voer de nieuwe rol in:');
-                            if (newRole !== null) {
-                                updateUserRole(userId, newRole);
-                            }
+                        const select = document.createElement('select');
+                        roleOptions.forEach((option) => {
+                            const optionElement = document.createElement('option');
+                            optionElement.value = option;
+                            optionElement.textContent = option;
+                            select.appendChild(optionElement);
                         });
-                        cell4.appendChild(editButton);
+                        select.addEventListener('change', () => {
+                            const newRole = select.value;
+                            updateUserRole(userId, newRole);
+                        });
+                        select.value = userData.role || '';
+                        cell4.appendChild(select);
                     });
                 })
                 .catch((error) => {
@@ -148,24 +163,40 @@
         }
 
         function updateUserRole(userId, newRole) {
-            firestore.collection('users').doc(userId).update({
-                role: newRole
-            })
-                .then(() => {
-                    console.log('Gebruikersrol bijgewerkt voor gebruiker: ' + userId);
-                    displayAllUsers();
+            // Controleren of de huidige gebruiker een beheerder is
+            firestore.collection('users').doc(user.uid).get()
+                .then((doc) => {
+                    if (doc.exists) {
+                        const userData = doc.data();
+                        if (userData.role === 'admin') {
+                            // Alleen beheerders mogen rollen bijwerken
+                            firestore.collection('users').doc(userId).update({
+                                role: newRole
+                            })
+                                .then(() => {
+                                    console.log('Gebruikersrol bijgewerkt voor gebruiker: ' + userId);
+                                    // Refresh the table after updating the role
+                                    displayAllUsers();
+                                })
+                                .catch((error) => {
+                                    console.error('Fout bij bijwerken gebruikersrol:', error);
+                                });
+                        } else {
+                            console.error('Alleen beheerders mogen rollen bijwerken.');
+                        }
+                    } else {
+                        console.error('Huidige gebruiker niet gevonden.');
+                    }
                 })
                 .catch((error) => {
-                    console.error('Fout bij bijwerken gebruikersrol:', error);
+                    console.error('Fout bij ophalen gebruikersgegevens:', error);
                 });
         }
 
         logoutButton.addEventListener('click', () => {
             firebase.auth().signOut()
                 .then(() => {
-                    userInfoDiv.style.display = 'none';
-                    userTable.style.display = 'none';
-                    alert('U bent uitgelogd.');
+                    window.location.reload();  // Reload the page instead of hiding elements
                 })
                 .catch((error) => {
                     console.error('Fout bij uitloggen:', error);
@@ -175,6 +206,9 @@
 
 </body>
 </html>
+
+
+
 
 
 
