@@ -3,6 +3,23 @@
 @{
 }
 
+<script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-database-compat.js"></script>
+<script>
+    var firebaseConfig = {
+        apiKey: "YOUR-API-KEY",
+        authDomain: "YOUR-AUTH-DOMAIN",
+        databaseURL: "YOUR-DATABASE-URL",
+        projectId: "YOUR-PROJECT-ID",
+        storageBucket: "YOUR-STORAGE-BUCKET",
+        messagingSenderId: "YOUR-MESSAGING-SENDER-ID",
+        appId: "YOUR-APP-ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+
 <head>
     <link rel="stylesheet" href="~/css/style.css" />  
 </head>
