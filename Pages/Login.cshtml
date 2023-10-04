@@ -45,7 +45,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
 
     <script>
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        // Firebase-configuratie
         const firebaseConfig = {
             apiKey: "AIzaSyCCzNwDI9iTiTEc0QTN0XU39RxqWR9XYm4",
             authDomain: "geoprofs-1b3fb.firebaseapp.com",
@@ -96,7 +96,7 @@
                         if (userData.role === 'admin') {
                             // Display the user management section for admin
                             userTable.style.display = 'block';
-                            displayUserTable();
+                            displayAllUsers();
                         }
                     } else {
                         console.error('Gebruiker niet gevonden.');
@@ -109,11 +109,9 @@
                 });
         }
 
-        function displayUserTable() {
+        function displayAllUsers() {
             const userTableBody = document.getElementById('userTableBody');
-
-            // Clear the table body
-            userTableBody.innerHTML = '';
+            userTableBody.innerHTML = ''; // Clear the table body
 
             // Fetch all users from Firestore
             firestore.collection('users').get()
@@ -131,18 +129,17 @@
                         cell1.textContent = userId;
                         cell2.textContent = userData.email;
                         cell3.textContent = userData.role || 'Onbekend';
-                        if (userId !== user.uid) {
-                            // Allow editing for all users except the current logged-in user
-                            const editButton = document.createElement('button');
-                            editButton.textContent = 'Bewerk ID';
-                            editButton.addEventListener('click', () => {
-                                const newUserId = prompt('Voer het nieuwe ID in:');
-                                if (newUserId !== null) {
-                                    updateUserId(userId, newUserId);
-                                }
-                            });
-                            cell4.appendChild(editButton);
-                        }
+
+                        // Allow editing for all users
+                        const editButton = document.createElement('button');
+                        editButton.textContent = 'Bewerk ID';
+                        editButton.addEventListener('click', () => {
+                            const newRole = prompt('Voer de nieuwe rol in:');
+                            if (newRole !== null) {
+                                updateUserRole(userId, newRole);
+                            }
+                        });
+                        cell4.appendChild(editButton);
                     });
                 })
                 .catch((error) => {
@@ -150,23 +147,16 @@
                 });
         }
 
-        function updateUserId(userId, newUserId) {
-            firestore.collection('users').doc(userId).delete()
+        function updateUserRole(userId, newRole) {
+            firestore.collection('users').doc(userId).update({
+                role: newRole
+            })
                 .then(() => {
-                    firestore.collection('users').doc(newUserId).set({
-                        email: userId,
-                        role: 'medewerker'
-                    })
-                        .then(() => {
-                            console.log('Gebruiker-ID bijgewerkt naar: ' + newUserId);
-                            displayUserTable();
-                        })
-                        .catch((error) => {
-                            console.error('Fout bij bijwerken gebruiker-ID:', error);
-                        });
+                    console.log('Gebruikersrol bijgewerkt voor gebruiker: ' + userId);
+                    displayAllUsers();
                 })
                 .catch((error) => {
-                    console.error('Fout bij verwijderen gebruiker:', error);
+                    console.error('Fout bij bijwerken gebruikersrol:', error);
                 });
         }
 
@@ -185,6 +175,7 @@
 
 </body>
 </html>
+
 
 
 
